@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 20:03:14 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/09/19 18:34:41 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/09/19 19:07:51 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef	struct	s_game
 	bool	philo_action;
 	int		forks;
 	int		interrupt;
+	t_philo	philo;
 	
 }	t_game;
 
@@ -54,6 +55,8 @@ typedef	struct s_philo
 	bool	eat;
 	bool	sleep;
 	bool	think;
+	int		l_fork;
+	int		r_fork;
 	bool	d_forks;
 	bool	h_t_forks;
 	bool	starving;
