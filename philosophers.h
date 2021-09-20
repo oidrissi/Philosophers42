@@ -6,13 +6,14 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 20:03:14 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/09/19 19:07:51 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/09/20 19:36:11 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILOSOPHERS_H
 # define PHILOSOPHERS_H
 
+# include <stdbool.h>
 # include <stdio.h>		//	printf
 # include <stdlib.h>	//	malloc
 # include <string.h>	//	memset
@@ -46,25 +47,43 @@ typedef	struct	s_game
 	bool	philo_action;
 	int		forks;
 	int		interrupt;
-	t_philo	philo;
+	int		ttdie;
+	int		ttsleep;
+	int		tteat;
+	int		must_eat_nb;
+	
+	t_philo	*philo;
 	
 }	t_game;
 
 typedef	struct s_philo
 {
-	bool	eat;
-	bool	sleep;
-	bool	think;
-	int		l_fork;
-	int		r_fork;
-	bool	d_forks;
+	int					eat;
+	pthread_mutex_t		output;
+	pthread_mutex_t		l_fork;
+	pthread_mutex_t		r_fork;
 	bool	h_t_forks;
 	bool	starving;
 	bool	ate;
 	bool	dead;
+	char	*status;
 	
 }	t_philo;
 
 
 
+
 #endif
+
+/*
+
+a
+b
+mputex_lock
+c print
+mputex_unlock
+d
+ef
+g
+
+*/
