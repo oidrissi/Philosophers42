@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 20:03:14 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/09/20 19:36:11 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/09/21 11:30:32 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,47 +43,42 @@
 
 typedef	struct	s_game
 {
-	int		nb_philo;
-	bool	philo_action;
-	int		forks;
-	int		interrupt;
-	int		ttdie;
-	int		ttsleep;
-	int		tteat;
-	int		must_eat_nb;
-	
-	t_philo	*philo;
+	pthread_mutex_t	output;
+	pthread_mutex_t	dead;
+	pthread_mutex_t	time_eat;
+	pthread_mutex_t	finish;
+	int				nb_philo;
+	int				nb_p_action;
+	long int		start_time;
+	int				interrupt;
+	int				t_t_die;
+	int				t_t_sleep;
+	int				t_t_eat;
+	int				must_eat_nb;
 	
 }	t_game;
 
 typedef	struct s_philo
 {
-	int					eat;
-	pthread_mutex_t		output;
+	int					id;
+	long int			ms_eat;
 	pthread_mutex_t		l_fork;
-	pthread_mutex_t		r_fork;
-	bool	h_t_forks;
-	bool	starving;
-	bool	ate;
-	bool	dead;
-	char	*status;
+	pthread_mutex_t		*r_fork;
+	pthread_t			thread_id;
+	pthread_t			death_thread_id;
+	int					h_t_forks;
+	unsigned int		nb_ate;
+	int					done;
+	char				*status;
+	t_game				*g;
 	
 }	t_philo;
 
-
-
+typedef struct	s_params
+{
+	t_game	g;
+	t_philo	*ph;
+	
+}	t_params;
 
 #endif
-
-/*
-
-a
-b
-mputex_lock
-c print
-mputex_unlock
-d
-ef
-g
-
-*/
