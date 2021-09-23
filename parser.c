@@ -6,13 +6,11 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 19:21:48 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/09/23 16:14:26 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/09/23 17:38:02 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
-
-
 
 void	init_mutexes(t_params *p)
 {
@@ -22,7 +20,7 @@ void	init_mutexes(t_params *p)
 	pthread_mutex_init(&p->g.finish, NULL);
 }
 
-int     parse_philo(t_params *p, char **argv, int ac)
+int	parse_philo(t_params *p, char **argv, int ac)
 {
 	if ((ac == 5 || ac == 6) && alphanumeric(argv, 0, 1))
 	{
@@ -37,7 +35,7 @@ int     parse_philo(t_params *p, char **argv, int ac)
 			return (0);
 		return (1);
 	}
-	return (0);   
+	return (0);
 }
 
 void	init_game(t_params *p)
