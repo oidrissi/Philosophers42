@@ -6,15 +6,17 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 19:21:48 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/09/21 11:37:01 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/09/23 16:14:26 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
+
+
 void	init_mutexes(t_params *p)
 {
-	pthread_mutex_init(&p->g.write_mutex, NULL);
+	pthread_mutex_init(&p->g.output, NULL);
 	pthread_mutex_init(&p->g.dead, NULL);
 	pthread_mutex_init(&p->g.time_eat, NULL);
 	pthread_mutex_init(&p->g.finish, NULL);
