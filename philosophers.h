@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 20:03:14 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/09/23 18:02:32 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/09/24 17:18:26 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef	struct	s_game
 	pthread_mutex_t	finish;
 	int				nb_philo;
 	int				nb_p_action;
-	long int		start_time;
+	long long		start_time;
 	int				interrupt;
 	int				t_t_die;
 	int				t_t_sleep;
