@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   time.c                                             :+:      :+:    :+:   */
+/*   activity.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/23 18:07:37 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/09/24 17:51:29 by oidrissi         ###   ########.fr       */
+/*   Created: 2021/09/24 17:49:07 by oidrissi          #+#    #+#             */
+/*   Updated: 2021/09/24 17:55:36 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-long long	get_time(void)
+void	activity(t_philo *p)
 {
-	struct timeval	te;
-	long long		ms;
-
-	gettimeofday(&te, NULL);
-	ms = te.tv_sec * 1000LL + te.tv_usec / 1000;
-	return (ms);
+    
 }
 
-int		check_death(t_philo *ph, int j)
+void	sleep_think(t_philo *ph)
 {
-	
+	pthread_mutex_lock(&ph->g->output);
+	write_status("is sleeping\n", ph);
+	pthread_mutex_unlock(&ph->g->output);
+	ft_usleep(ph->g->sleep);
+	pthread_mutex_lock(&ph->g->output);
+	write_status("is thinking\n", ph);
+	pthread_mutex_unlock(&ph->g->output);
 }
