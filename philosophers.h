@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 20:03:14 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/09/24 17:18:26 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/09/25 15:36:29 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef	struct	s_game
 	int				t_t_sleep;
 	int				t_t_eat;
 	int				must_eat_nb;
+	int				done;
 	
 }	t_game;
 
@@ -80,5 +81,8 @@ typedef struct	s_params
 	t_philo	*ph;
 	
 }	t_params;
+
+int	parse_philo(t_params *p, char **argv, int ac);
+
 
 #endif

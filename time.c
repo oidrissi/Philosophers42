@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 18:07:37 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/09/24 17:51:29 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/09/24 18:05:03 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ long long	get_time(void)
 	return (ms);
 }
 
-int		check_death(t_philo *ph, int j)
+int		ft_usleep(t_philo *ph, int j)
 {
 	
 }

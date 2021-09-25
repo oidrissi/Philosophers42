@@ -6,11 +6,12 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 17:49:07 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/09/24 17:55:36 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/09/24 18:04:52 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
+
 
 void	activity(t_philo *p)
 {
