@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 20:03:14 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/09/25 15:36:29 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/10/03 19:03:47 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,8 @@ typedef struct	s_params
 	
 }	t_params;
 
-int	parse_philo(t_params *p, char **argv, int ac);
+int			parse_philo(t_params *p, char **argv, int ac);
+long long	get_time(void);
 
 
 #endif
